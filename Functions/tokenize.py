@@ -20,6 +20,12 @@ def tokeniz(text):  # Tokenize a text with library Spacy
             - tokenize article, each word is a token which we can apply some
             functions as .text, . lemma etc ...
     """
-    simple_art = text.replace("'", " ")
-    doc = nlp(simple_art)
+#    simple_art = text.replace("'", " ")
+    doc = nlp(text)
     return doc
+
+
+text = "je m'appelle Clement BRANDAO"
+text_tok = tokeniz(text)
+for ent in doc.ents:
+    print(ent.text, ent.label_)

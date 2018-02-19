@@ -36,7 +36,7 @@ def import_articles(path_source):
         if not js.startswith('.'):
             xdirpaper = path_source + '/' + js
             # progress bar for each newspaper repository
-            with tqdm(desc=str(sources), total=len(xdirpaper)) as fbar:
+            with tqdm(desc=str(sources), total=len(sources)) as fbar:
                 with open(xdirpaper, 'r',
                           encoding='utf-8') as dict_robot:
                     article[js] = json.load(dict_robot)
