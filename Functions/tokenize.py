@@ -27,5 +27,5 @@ def tokeniz(text):  # Tokenize a text with library Spacy
 
 text = "je m'appelle Clement BRANDAO"
 text_tok = tokeniz(text)
-for ent in doc.ents:
+for ent in text_tok.ents:
     print(ent.text, ent.label_)

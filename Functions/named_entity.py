@@ -7,7 +7,7 @@ Created on Mon Feb 19 10:59:32 2018
 """
 
 
-def handing_entity(tokenize_text):  # Unique named entity version
+def handing_entity(source, title, date, tokenize_text, tab_entity):
     """
         Summary:
             we go through a tokenize text (result of the function "tokenize"),
@@ -19,7 +19,6 @@ def handing_entity(tokenize_text):  # Unique named entity version
             are replace by _, in order to recognize one entity, as one token in
             the lemmatisation
     """
-    ent = []
     for entity in tokenize_text.ents:
-        ent.append(entity, entity_label)
-    return ent
+        tab_entity.append([source, title, date, entity.text, entity.label_])
+    return tab_entity

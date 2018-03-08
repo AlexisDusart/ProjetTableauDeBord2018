@@ -10,9 +10,6 @@ from os import listdir
 import json
 from tqdm import tqdm
 
-
-path = "/Users/brandao/Desktop/COURS/ProjetTableauDeBord/ProjetTableauDeBord2018/Json"
-
 def import_articles(path_source):
     """
         Summary:
@@ -46,6 +43,4 @@ def import_articles(path_source):
         continue
     # End all newspapers
     return article
-
-articles = import_articles(path)
 
