@@ -23,9 +23,3 @@ def tokeniz(text):  # Tokenize a text with library Spacy
 #    simple_art = text.replace("'", " ")
     doc = nlp(text)
     return doc
-
-
-text = "je m'appelle Clement BRANDAO"
-text_tok = tokeniz(text)
-for ent in text_tok.ents:
-    print(ent.text, ent.label_)

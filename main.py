@@ -26,21 +26,16 @@ for sources in articles:
             title = cleanhtml(articles[sources][cle_art]['Titre'])
             date = articles[sources][cle_art]['Date']
             content_tok = tokeniz(content)
-            dic_sources[sources][title] = handing_entity(content_tok)
+            dic_sources[sources][title] = [handing_entity(content_tok), date]
 #            entity = handing_entity(sources, title, date, content_tok, tab_ent)
             pbar.update()
-
-dicdic = {}
-dicdic['blabla'] = {}
-dicdic['blabla']['roro'] = 4
-dicdic['blabla']['rara'] = 4
-
-
+for element in dic_sources['esportsEclypsia.json']:
+    print(element[0])
 
 ent_text = []
 i=0
 for elemnt in tab_ent:
-    ent_text.append(elemnt[2])
+    ent_text.append(elemnt[3])
     
 compte = {}.fromkeys(set(ent_text),0)
 for valeur in ent_text:
@@ -49,4 +44,4 @@ for valeur in ent_text:
 sorted_compte = sorted(compte.items(), key=operator.itemgetter(1), reverse = True)
 
 with open('/Users/brandao/Desktop/COURS/ProjetTableauDeBord/ProjetTableauDeBord2018/entity.json', 'w') as f:
-     json.dump(entity, f)
+     json.dump(dic_sources, f)

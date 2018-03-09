@@ -7,7 +7,7 @@ Created on Mon Feb 19 10:59:32 2018
 """
 
 
-def handing_entity(source, title, date, tokenize_text, tab_entity):
+def handing_entity(tokenize_text):
     """
         Summary:
             we go through a tokenize text (result of the function "tokenize"),
@@ -19,6 +19,8 @@ def handing_entity(source, title, date, tokenize_text, tab_entity):
             are replace by _, in order to recognize one entity, as one token in
             the lemmatisation
     """
+    tab = []
     for entity in tokenize_text.ents:
-        tab_entity.append([source, title, date, entity.text, entity.label_])
-    return tab_entity
+        tab.append([entity.text, entity.label_])
+#        tab_entity.append([source, title, date, entity.text, entity.label_])
+    return tab
