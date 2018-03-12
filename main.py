@@ -18,19 +18,19 @@ path = "/Users/brandao/Desktop/COURS/ProjetTableauDeBord/ProjetTableauDeBord2018
 
 articles = import_articles(path)
 dic_sources = {}
+nombres = []
 for sources in articles:
     dic_sources[sources] = {}
     with tqdm(desc='JSONing', total=len(articles[sources])) as pbar:
         for cle_art in articles[sources]:
             content = cleanhtml(articles[sources][cle_art]['Contenu'])
-            title = cleanhtml(articles[sources][cle_art]['Titre'])
-            date = articles[sources][cle_art]['Date']
-            content_tok = tokeniz(content)
-            dic_sources[sources][title] = [handing_entity(content_tok), date]
+#            title = cleanhtml(articles[sources][cle_art]['Titre'])
+#            date = articles[sources][cle_art]['Date']
+            nombres.append(re.findall("\d+", content))
+#            content_tok = tokeniz(content)
+#            dic_sources[sources][title] = [handing_entity(content_tok), date]
 #            entity = handing_entity(sources, title, date, content_tok, tab_ent)
             pbar.update()
-for element in dic_sources['esportsEclypsia.json']:
-    print(element[0])
 
 ent_text = []
 i=0
