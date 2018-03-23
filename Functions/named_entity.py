@@ -15,12 +15,10 @@ def handing_entity(tokenize_text):
         In:
             - tokenize text, result of function "tokeniz()"
         Out:
-            - list of named entity, and the same list, but whitespaces
-            are replace by _, in order to recognize one entity, as one token in
-            the lemmatisation
+            - list of named entity where whitespaces are replace by _
+            , in order to recognize one entity, as one token
     """
     tab = []
     for entity in tokenize_text.ents:
-        tab.append([entity.text, entity.label_])
-#        tab_entity.append([source, title, date, entity.text, entity.label_])
+        tab.append([entity.text.replace(" ", "_"), entity.label_])
     return tab

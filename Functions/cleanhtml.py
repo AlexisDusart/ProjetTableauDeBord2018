@@ -15,7 +15,7 @@ def cleanhtml(contenu):
         In:
             - text hmtl
         Out:
-            - clean text without tags and without html content
+            - clean text without tags and html content
     """
     contenu = BeautifulSoup(contenu)
     contenu = contenu.prettify()
@@ -24,11 +24,4 @@ def cleanhtml(contenu):
     contenu = contenu.replace("\n", "")
     contenu = " ".join(contenu.split())
     contenu = contenu.replace('(__scads = window.__scads || []).push({\"z\":11865,\"targetId',"")
-    contenu = contenu.replace('eSports', 'eSport')
-    contenu = contenu.replace("doubleclickpub('div", '')
-    contenu = contenu.replace("LsdException", '')
-    contenu = contenu.replace("C’", '')
-    contenu = contenu.replace('SemiHidden="true"', '')
-    contenu = contenu.replace('UnhideWhenUsed="true"', '')
-    contenu = contenu.replace('|', '')
     return contenu
