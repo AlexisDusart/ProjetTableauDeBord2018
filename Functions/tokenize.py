@@ -10,7 +10,7 @@ import spacy
 nlp = spacy.load('fr')
 
 
-def tokeniz(text):  # Tokenize a text with library Spacy
+def tokeniz(text):
     """
         Summary: Transorm all the text  where each word become tokens
         tokens

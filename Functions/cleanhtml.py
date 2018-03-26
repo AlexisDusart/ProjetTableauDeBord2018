@@ -8,6 +8,7 @@ Created on Fri Feb 16 10:17:13 2018
 from bs4 import BeautifulSoup
 import re
 
+
 def cleanhtml(contenu):
     """
         Summary:
