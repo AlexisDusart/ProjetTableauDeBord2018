@@ -13,13 +13,10 @@
     def import_articles(path_source):
         """
             Summary:
-                Import a panel of article from robot group (g4) according to the
-                server structure :
-                    [date] / path_source / newspaper / article
-                where "date" corresponds to the most recent repository.
+                Import all article extract frome the Json file
             In:
                 - path_source : a string which corresponds to the localisation
-                     of robot group (g4)
+                     of the Json File
             Out:
                 - articles : a dict of articles
         """

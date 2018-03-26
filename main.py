@@ -24,11 +24,11 @@ for sources in articles:
     with tqdm(desc='JSONing', total=len(articles[sources])) as pbar:
         for cle_art in articles[sources]:
             content = cleanhtml(articles[sources][cle_art]['Contenu'])
-#            title = cleanhtml(articles[sources][cle_art]['Titre'])
-#            date = articles[sources][cle_art]['Date']
-#           content_tok = tokeniz(content)
-#            dic_sources[sources][title] = [handing_entity(content_tok), date]
-#            entity = handing_entity(sources, title, date, content_tok, tab_ent)
+            title = cleanhtml(articles[sources][cle_art]['Titre'])
+            date = articles[sources][cle_art]['Date']
+           content_tok = tokeniz(content)
+            dic_sources[sources][title] = [handing_entity(content_tok), date]
+            entity = handing_entity(sources, title, date, content_tok, tab_ent)
             tab_nombres.append([findNumber(content), sources, cle_art])
             pbar.update()
 
@@ -36,8 +36,7 @@ for sources in articles:
 for i in range(len(tab_nombres)):
     if not tab_nombres[i][0]:
         del tab_nombres[i]
-        
-# viewers / spectateurs / cashprize / salaire / contrat / prix place / prix spectacle
+
         
 tab_nombres[0][0]
 tab_nombres[0]

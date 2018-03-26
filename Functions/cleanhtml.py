@@ -11,7 +11,8 @@ import re
 def cleanhtml(contenu):
     """
         Summary:
-            this functions clean  html content
+            this functions clean  html content to delete all tags and 
+            unrelevent content
         In:
             - text hmtl
         Out:
