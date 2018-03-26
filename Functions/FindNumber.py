@@ -14,7 +14,8 @@ def findNumber(text):
         Summary:
             This function is used to find relevent number using the word or
             next or previous (wich are search in list if next or previous
-            words are in the list)) 
+            words are in the list)) . This list will be treat manually to 
+            get back best results wich they will be insert in the DataBase
         In:
             - content extract from an article
         Out:
